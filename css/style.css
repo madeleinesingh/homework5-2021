@@ -79,16 +79,15 @@ nav a:focus {
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 1;
-  position: relative;
-  bottom: 50px;
+  position: absolute;
+  bottom: -50px;
 
   /*Your code here*/
 }
 /*Req 3b*/
 /*Write selector/rule property to position the skip class element*/
 .skip a:focus{
-  position: relative;
-  bottom: 10px;
+  top: 10px;
 }
 
 /*Req 4*/
@@ -100,9 +99,10 @@ nav a:focus {
 
 /*Req 5*/
 .container{
+  display: grid;
   grid-template-columns: 1fr 3fr 3fr 1fr;
   grid-template-rows: auto auto auto auto;
-  grid-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 header{
@@ -120,44 +120,40 @@ header{
   /*Req 6b*/
   /*Set background-image to header.jpg */
   background-image: url("../images/header.jpg");
-  background-repeat: no-repeat;
  
 }
 /*Req 7a*/
 .about, .method, .client, .contacts{
-  grid-column: 2/ span2;
+  grid-column: 2/ span 2;
 
 }
 
 /*Req 8a, 8b, and 8c*/
 .about-image, .method-image, .client-image, .contact-image{
-  grid-column: auto;
-  grid-auto-rows: minmax(650px, auto);
+  grid-column: 1/ -1;
+  max-height: 650px;
+  overflow: hidden;
 
 }
 
 /*Req 7b & 8d*/
 .about, .about-image{
-  grid-column: 2/ span2;
-  grid-row: 1/ span1;
+  grid-row: 1/ span 1;
 }
 
 /*Req 7b & 8d*/
 .method, .method-image{
-  grid-column: 2/ span2;
-  grid-row: 2/ span1;
+  grid-row: 2/ span 1;
 }
 
 /*Req 7b & 8d*/
 .client, .client-image{
-    grid-column: 2/ span2;
-    grid-row: 3/ span1;
+    grid-row: 3/ span 1;
 }
 
 /*Req 7b & 8d*/
 .contacts, .contact-image{
-    grid-column: 2/ span2;
-    grid-row: 4/ span1;   
+    grid-row: 4/ span 1;   
 }
 
 /*Req 9*/
@@ -165,7 +161,7 @@ header{
   background-color: rgba(255, 255, 255, .8);
   border: 10px solid black;
   padding: 30px;
-  text-align: center;
+  align-self: center;
 
 }
 
@@ -179,8 +175,8 @@ header{
   /*Req 10*/
   nav{
     padding: 30px 0px;
-    position: absolute;
-    top: 50%;
+    text-align: right;
+    align-self: center;
   }
 
   /*Req 11*/
